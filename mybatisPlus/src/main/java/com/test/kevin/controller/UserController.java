@@ -6,10 +6,12 @@ import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.github.pagehelper.PageHelper;
+
 import java.util.Objects;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+
 import com.test.gen.PageDomain;
 import com.test.gen.R;
 import com.test.gen.TableDataInfo;
@@ -20,8 +22,7 @@ import com.test.kevin.entity.User;
 import com.test.gen.BaseController;
 
 /**
- *
- *   前端控制器
+ * 前端控制器
  *
  * @author: 胡双喜
  * @date: 2021-11-16
@@ -29,7 +30,7 @@ import com.test.gen.BaseController;
 @RestController
 @RequestMapping({"user"})
 @Api(tags = "管理")
-    public class UserController extends BaseController {
+public class UserController extends BaseController {
 
     @Resource
     private UserService service;
@@ -37,7 +38,7 @@ import com.test.gen.BaseController;
     @GetMapping({"list"})
     @ApiOperationSupport(order = 1)
     @ApiOperation(value = "根据实体属性分页查询")
-    public R<TableDataInfo<User>> list(User entity,PageDomain pageDomain) {
+    public R<TableDataInfo<User>> list(User entity, PageDomain pageDomain) {
         PageHelper.startPage(CheckPageDomain(pageDomain));
         QueryWrapper<User> qw = new QueryWrapper<User>();
         qw.setEntity(entity).orderByAsc("id");
@@ -63,11 +64,11 @@ import com.test.gen.BaseController;
     @ApiOperationSupport(order = 4)
     @ApiOperation(value = "更新实体")
     public R update(@RequestBody User entity) {
-        if(Objects.isNull(entity.getId())){
+        if (Objects.isNull(entity.getId())) {
             return R.fail("参数为空!");
         }
         Object result = service.getById(entity.getId());
-        if(Objects.nonNull(result)) {
+        if (Objects.nonNull(result)) {
             return R.ok(service.updateById(entity));
         } else {
             return R.fail("数据不存在!");
@@ -79,7 +80,7 @@ import com.test.gen.BaseController;
     @ApiOperation(value = " 删除实体")
     public R remove(@PathVariable("id") int id) {
         Object entity = service.getById(id);
-        if(Objects.nonNull(entity)) {
+        if (Objects.nonNull(entity)) {
             return R.ok(service.removeById(id));
         } else {
             return R.fail("数据不存在!");
