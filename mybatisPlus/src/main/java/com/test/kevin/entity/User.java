@@ -1,22 +1,13 @@
 package com.test.kevin.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-
-import java.util.Date;
-
-import com.baomidou.mybatisplus.annotation.Version;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableField;
-
-import java.io.Serializable;
-
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -38,7 +29,7 @@ public class User implements Serializable {
     private String id;
 
     @ApiModelProperty(value = "用户名")
-    private String userName;
+    private String username;
 
     @ApiModelProperty(value = "密码")
     private String password;
@@ -73,8 +64,10 @@ public class User implements Serializable {
     @ApiModelProperty(value = "账户名称")
     private String account;
 
+    @TableField(exist = false)
     private String pageNumber;
 
+    @TableField(exist = false)
     private String pageSize;
 
     private String districtCode;
@@ -82,6 +75,9 @@ public class User implements Serializable {
     private String streetSign;
 
     private String communitySign;
+
+    @TableField(exist = false)
+    private String token;
 
 
 }
