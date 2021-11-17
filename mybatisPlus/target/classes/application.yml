@@ -63,3 +63,15 @@ mybatis-plus:
       logic-delete-value: 1
       # 数据库表名的前缀
       table-prefix: t_
+
+
+minio:
+  endpoint: 127.0.0.1
+  port: 9000
+  accessKey: hsx
+  secretKey: hsx122096
+  secure: false
+  bucketName: kevin
+  configDir: E:\minio
+
+

@@ -84,6 +84,12 @@
             <version>3.0.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>7.0.2</version>
+        </dependency>
+
     </dependencies>
 
 

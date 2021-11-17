@@ -20,10 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="version1.0">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/kevin/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/kevin/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/kevin/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/kevin/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/kevin/mapper/xml/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/kevin/mapper/xml/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/mybatisPlus.kotlin_module" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_spotbugs_spotbugs_annotations_4_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okhttp3_okhttp_3_14_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_squareup_okio_okio_1_17_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_minio_minio_7_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_simpleframework_simple_xml_2_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_1_1_3_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/config/MinioConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/minio/MinioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/utils/MinioUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_27_0_1_android.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_25_1_jre.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_compat_qual_2_5_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_0_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mybatisPlus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mybatisPlus.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/test/kevin/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/test/kevin/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/test/kevin/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/test/kevin/entity/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +86,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -149,7 +171,8 @@
       <workItem from="1636610330814" duration="730000" />
       <workItem from="1636680747252" duration="22221000" />
       <workItem from="1637043938111" duration="3592000" />
-      <workItem from="1637048992387" duration="3024000" />
+      <workItem from="1637048992387" duration="4273000" />
+      <workItem from="1637114082714" duration="4199000" />
     </task>
     <task id="LOCAL-00001" summary="version1.0">
       <created>1637049063451</created>
@@ -158,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637049063451</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version1.0">
+      <created>1637053344799</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637053344799</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,58 +231,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1637045663095" />
+    <state width="401" height="466" key="DebuggerActiveHint" timestamp="1637115817833">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="401" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1637115817833" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1636609910494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1636609910494" />
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom" timestamp="1637049160827">
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom" timestamp="1637117896181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637049160827" />
-    <state width="1493" height="206" key="GridCell.Tab.0.center" timestamp="1637049160827">
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637117896181" />
+    <state width="1493" height="148" key="GridCell.Tab.0.center" timestamp="1637117896181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637049160827" />
-    <state width="1493" height="206" key="GridCell.Tab.0.left" timestamp="1637049160827">
+    <state width="1493" height="148" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637117896181" />
+    <state width="1493" height="148" key="GridCell.Tab.0.left" timestamp="1637117896181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637049160827" />
-    <state width="1493" height="206" key="GridCell.Tab.0.right" timestamp="1637049160827">
+    <state width="1493" height="148" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637117896181" />
+    <state width="1493" height="148" key="GridCell.Tab.0.right" timestamp="1637117896181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637049160827" />
-    <state width="1493" height="206" key="GridCell.Tab.1.bottom" timestamp="1637048922803">
+    <state width="1493" height="148" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637117896181" />
+    <state width="1493" height="148" key="GridCell.Tab.1.bottom" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637048922803" />
-    <state width="1493" height="206" key="GridCell.Tab.1.center" timestamp="1637048922803">
+    <state width="1493" height="148" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.1.center" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637048922803" />
-    <state width="1493" height="206" key="GridCell.Tab.1.left" timestamp="1637048922803">
+    <state width="1493" height="148" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.1.left" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637048922803" />
-    <state width="1493" height="206" key="GridCell.Tab.1.right" timestamp="1637048922803">
+    <state width="1493" height="148" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.1.right" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637048922803" />
-    <state width="1493" height="206" key="GridCell.Tab.2.bottom" timestamp="1637048922783">
+    <state width="1493" height="148" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.2.bottom" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637048922783" />
-    <state width="1493" height="206" key="GridCell.Tab.2.center" timestamp="1637048922783">
+    <state width="1493" height="148" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.2.center" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1637048922783" />
-    <state width="1493" height="206" key="GridCell.Tab.2.left" timestamp="1637048922783">
+    <state width="1493" height="148" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.2.left" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1637048922783" />
-    <state width="1493" height="206" key="GridCell.Tab.2.right" timestamp="1637048922783">
+    <state width="1493" height="148" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
+    <state width="1493" height="148" key="GridCell.Tab.2.right" timestamp="1637117896086">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="206" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1637048922783" />
+    <state width="1493" height="148" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1637117896086" />
     <state x="455" y="115" key="Maven.ArtifactSearchDialog" timestamp="1636534048735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -261,10 +295,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1636681712375" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1637049072577">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1637053351282">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1637049072577" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1637053351282" />
+    <state width="775" height="412" key="XDebugger.FullValuePopup" timestamp="1637115817829">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="775" height="412" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1637115817829" />
     <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637053334010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -273,6 +311,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="550" y="108" width="600" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637045690561" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1637114225272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1637114225272" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mybatisPlus$MyApplication.ic" NAME="MyApplication Coverage Results" MODIFIED="1636681536302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
