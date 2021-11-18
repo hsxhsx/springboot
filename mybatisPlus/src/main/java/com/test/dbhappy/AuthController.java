@@ -69,12 +69,16 @@ public class AuthController {
      * @param admin 用户实体类
      */
     @Secured("ROLE_ADMIN")
-    @PostMapping("/adduser")
+    @PostMapping("/addUser")
     public R add(@RequestBody User admin  ) {
         //获取用户的密码，并调用encode函数进行加密，加密后的密码在放入实体类中
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         //调用service层的的添加方法添加用户
-        userService.save(admin);
+        try {
+            userService.save(admin);
+        } catch (Exception exception) {
+           return R.fail("已存在相同用户");
+        }
         //返回结果
         return R.ok("新增成功");
     }
