@@ -1,7 +1,6 @@
 package com.test.security;
 
 import com.test.kevin.entity.User;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,11 +8,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-@Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class SecurityUserDetails extends User implements UserDetails {
 
+
+    private String username;
+
+    private String password;
 
     private Collection<? extends GrantedAuthority> authorities;
 
@@ -24,15 +26,19 @@ public class SecurityUserDetails extends User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return null;
+        return this.username;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
     }
 
 
     public SecurityUserDetails(User user, Collection<? extends GrantedAuthority> authorities){
         this.authorities = authorities;
-        this.setPassword(user.getPassword());
-        this.setUsername(user.getUsername());
-        this.setAuthorities(authorities);
+        this.password = user.getPassword();
+        this.username = user.getUsername();
     }
 
     /**

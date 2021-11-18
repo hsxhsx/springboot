@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity// 这个注解必须加，开启Security
-@EnableGlobalMethodSecurity(prePostEnabled = true)//保证post之前的注解可以使用
+@EnableGlobalMethodSecurity(prePostEnabled = true,securedEnabled = true, jsr250Enabled = true)//保证post之前的注解可以使用
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -48,10 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/auth/login").permitAll()
-                .antMatchers("/haha").permitAll()
                 .antMatchers("/doc.html").permitAll()
-                .antMatchers("/sysUser/test").permitAll()
-                .antMatchers("/auth/adduser").access("hasRole('admin') or hasRole('ADMIN')")
                 .antMatchers(HttpMethod.OPTIONS, "/**").anonymous()
                 .and()
                 .csrf().disable()                      // 禁用 Spring Security 自带的跨域处理

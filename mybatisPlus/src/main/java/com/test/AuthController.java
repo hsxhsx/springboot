@@ -7,6 +7,7 @@ import com.test.kevin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -58,6 +59,7 @@ public class AuthController {
      * 增加
      * @param admin 用户实体类
      */
+    @Secured("ROLE_ADMIN")
     @PostMapping("/adduser")
     public R add(@RequestBody User admin  ) {
         //获取用户的密码，并调用encode函数进行加密，加密后的密码在放入实体类中

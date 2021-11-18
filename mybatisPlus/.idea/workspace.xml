@@ -19,32 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="去掉没用的引用">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_api_0_10_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_impl_0_10_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_jackson_0_10_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_3_12_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_3_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_3_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_3_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/context/SpringContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/exception/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/filter/JwtAuthorizationTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/handler/JwtAccessDeniedHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/jwt/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/jwt/JwtUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/security/SecurityUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mybatisPlus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mybatisPlus.iml" afterDir="false" />
+    <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="新增security+jwt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/MyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/kevin/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/kevin/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/test/MyApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/test/MyApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/test/kevin/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/test/kevin/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/filter/JwtAuthorizationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/filter/JwtAuthorizationTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/security/SecurityUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/security/SecurityUserDetails.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +155,7 @@
       <workItem from="1636680747252" duration="22221000" />
       <workItem from="1637043938111" duration="3592000" />
       <workItem from="1637048992387" duration="4273000" />
-      <workItem from="1637114082714" duration="28374000" />
+      <workItem from="1637114082714" duration="31605000" />
     </task>
     <task id="LOCAL-00001" summary="version1.0">
       <created>1637049063451</created>
@@ -205,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637118712923</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="新增security+jwt">
+      <created>1637143823184</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637143823185</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +214,8 @@
     <MESSAGE value="version1.0" />
     <MESSAGE value="新增minio文件服务上传下载接口" />
     <MESSAGE value="去掉没用的引用" />
-    <option name="LAST_COMMIT_MESSAGE" value="去掉没用的引用" />
+    <MESSAGE value="新增security+jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增security+jwt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636534606324">
@@ -254,62 +242,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1637135619123" />
-    <state width="467" height="466" key="DebuggerActiveHint" timestamp="1637143502028">
+    <state width="467" height="466" key="DebuggerActiveHint" timestamp="1637200208660">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="467" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1637143502028" />
+    <state width="467" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1637200208660" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1637125656907">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1637125656907" />
-    <state width="1493" height="255" key="GridCell.Tab.0.bottom" timestamp="1637143378582">
+    <state width="1493" height="225" key="GridCell.Tab.0.bottom" timestamp="1637200898794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637143378582" />
-    <state width="1493" height="255" key="GridCell.Tab.0.center" timestamp="1637143378582">
+    <state width="1493" height="225" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637200898794" />
+    <state width="1493" height="225" key="GridCell.Tab.0.center" timestamp="1637200898794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637143378582" />
-    <state width="1493" height="255" key="GridCell.Tab.0.left" timestamp="1637143378582">
+    <state width="1493" height="225" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637200898794" />
+    <state width="1493" height="225" key="GridCell.Tab.0.left" timestamp="1637200898794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637143378582" />
-    <state width="1493" height="255" key="GridCell.Tab.0.right" timestamp="1637143378582">
+    <state width="1493" height="225" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637200898794" />
+    <state width="1493" height="225" key="GridCell.Tab.0.right" timestamp="1637200898794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637143378582" />
-    <state width="1493" height="255" key="GridCell.Tab.1.bottom" timestamp="1637143069113">
+    <state width="1493" height="225" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637200898794" />
+    <state width="1493" height="225" key="GridCell.Tab.1.bottom" timestamp="1637200913311">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637143069113" />
-    <state width="1493" height="255" key="GridCell.Tab.1.center" timestamp="1637143069113">
+    <state width="1493" height="225" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637200913311" />
+    <state width="1493" height="225" key="GridCell.Tab.1.center" timestamp="1637200913310">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637143069113" />
-    <state width="1493" height="255" key="GridCell.Tab.1.left" timestamp="1637143069113">
+    <state width="1493" height="225" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637200913310" />
+    <state width="1493" height="225" key="GridCell.Tab.1.left" timestamp="1637200913310">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637143069113" />
-    <state width="1493" height="255" key="GridCell.Tab.1.right" timestamp="1637143069113">
+    <state width="1493" height="225" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637200913310" />
+    <state width="1493" height="225" key="GridCell.Tab.1.right" timestamp="1637200913310">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637143069113" />
-    <state width="1493" height="255" key="GridCell.Tab.2.bottom" timestamp="1637143056177">
+    <state width="1493" height="225" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637200913310" />
+    <state width="1493" height="225" key="GridCell.Tab.2.bottom" timestamp="1637200898719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637143056177" />
-    <state width="1493" height="255" key="GridCell.Tab.2.center" timestamp="1637143056177">
+    <state width="1493" height="225" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637200898719" />
+    <state width="1493" height="225" key="GridCell.Tab.2.center" timestamp="1637200898718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1637143056177" />
-    <state width="1493" height="255" key="GridCell.Tab.2.left" timestamp="1637143056177">
+    <state width="1493" height="225" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1637200898718" />
+    <state width="1493" height="225" key="GridCell.Tab.2.left" timestamp="1637200898718">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1637143056177" />
-    <state width="1493" height="255" key="GridCell.Tab.2.right" timestamp="1637143056177">
+    <state width="1493" height="225" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1637200898718" />
+    <state width="1493" height="225" key="GridCell.Tab.2.right" timestamp="1637200898719">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="255" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1637143056177" />
+    <state width="1493" height="225" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1637200898719" />
     <state x="455" y="115" key="Maven.ArtifactSearchDialog" timestamp="1636534048735">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -318,22 +306,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1637122193324" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1637118720333">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1637143827179">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1637118720333" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1637143827179" />
     <state width="775" height="412" key="XDebugger.FullValuePopup" timestamp="1637137075651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="775" height="412" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1637137075651" />
-    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637118694844">
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637143798315">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1637118694844" />
-    <state x="550" y="108" width="600" height="560" key="find.popup" timestamp="1637139528207">
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1637143798315" />
+    <state x="550" y="108" width="600" height="560" key="find.popup" timestamp="1637200433519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="550" y="108" width="600" height="560" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637139528207" />
+    <state x="550" y="108" width="600" height="560" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1637200433519" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1637114225272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -343,24 +331,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/test/jwt/JwtTokenUtil.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/test/jwt/JwtTokenUtil.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/test/filter/JwtAuthorizationTokenFilter.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/test/jwt/JwtTokenUtil.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="41" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/test/handler/JwtAccessDeniedHandler.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
