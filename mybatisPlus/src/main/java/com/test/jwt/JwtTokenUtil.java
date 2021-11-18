@@ -33,6 +33,7 @@ public class JwtTokenUtil implements Serializable {
         return doGenerateToken(claims, username);
     }
 
+    //todo:引入redis做token存储是单点登录校验token和username的唯一性。防止多端登录以及账号密码修改
     private Map<String,Object> doGenerateToken(Map<String, Object> claims, String subject) {
         final Date createdDate = clock.now();
         final Date expirationDate = calculateExpirationDate(createdDate);
