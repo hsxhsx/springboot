@@ -25,8 +25,6 @@ public class JwtTokenUtil implements Serializable {
     @Value("${jwt.expiration}")
     private Long expiration;
 
-    @Value("${jwt.token}")
-    private String tokenHeader;
 
     private Clock clock = DefaultClock.INSTANCE;
 

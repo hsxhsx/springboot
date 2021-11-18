@@ -32,6 +32,7 @@ public class JwtUserDetailsService implements UserDetailsService {
         System.out.println("JwtUserDetailsService:" + user);
         List<GrantedAuthority> authorityList = new ArrayList<>();
         if (ObjectUtils.isEmpty(user)) return null;
+        //此处做业务逻辑处理，角色权限查询
         if (!StringUtils.isEmpty(user.getRole())) {
             List<String> roleList = Arrays.asList(user.getRole().split(","));
             roleList.stream().forEach(role -> {
