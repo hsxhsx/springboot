@@ -84,7 +84,7 @@ import java.util.Objects;
 
     @PostMapping({"batch-insert"})
     @ApiOperationSupport(order = 6)
-    @ApiOperation(value = "批量保存更新实体")
+    @ApiOperation(value = "批量保存实体")
     public R batchInsert(@RequestBody List<User> entityList) {
         if(CollectionUtils.isEmpty(entityList)) return R.fail("参数为空");
         return R.ok(service.batchInsert(entityList));
