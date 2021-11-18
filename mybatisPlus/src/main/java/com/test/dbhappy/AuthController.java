@@ -2,9 +2,8 @@ package com.test.dbhappy;
 
 import com.test.dbhappy.gen.R;
 import com.test.dbhappy.jwt.JwtTokenUtil;
-import com.test.dbhappy.jwt.LoginUser;
-import com.test.dbhappy.entity.User;
-import com.test.dbhappy.service.UserService;
+import com.test.dbhappy.entity.LoginUser;
+import com.test.dbhappy.service.LoginUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -38,7 +37,7 @@ public class AuthController {
     }
 
     @Autowired
-    private UserService userService;
+    private LoginUserService loginUserService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -47,11 +46,11 @@ public class AuthController {
     private JwtTokenUtil jwtTokenUtil;
 
     @PostMapping("login")
-    public R<LoginUser> login(@RequestBody User user){
+    public R<com.test.dbhappy.jwt.LoginUser> login(@RequestBody LoginUser user){
         final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
         if(userDetails!=null && passwordEncoder.matches(user.getPassword(),userDetails.getPassword())) {
             Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
-            LoginUser loginUser = new LoginUser();
+            com.test.dbhappy.jwt.LoginUser loginUser = new com.test.dbhappy.jwt.LoginUser();
             loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
             loginUser.setToken((String) hashMap.get("token"));
             loginUser.setUserDetails(userDetails);
@@ -70,12 +69,12 @@ public class AuthController {
      */
     @Secured("ROLE_ADMIN")
     @PostMapping("addUser")
-    public R add(@RequestBody User admin  ) {
+    public R add(@RequestBody LoginUser admin  ) {
         //获取用户的密码，并调用encode函数进行加密，加密后的密码在放入实体类中
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         //调用service层的的添加方法添加用户
         try {
-            userService.save(admin);
+            loginUserService.save(admin);
         } catch (Exception exception) {
            return R.fail("已存在相同用户");
         }
@@ -84,9 +83,9 @@ public class AuthController {
     }
 
     @PostMapping("refreshToke")
-    public R<LoginUser> refreshToke(@RequestBody @Valid User user  ) {
+    public R<com.test.dbhappy.jwt.LoginUser> refreshToke(@RequestBody @Valid LoginUser user  ) {
         Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
-        LoginUser loginUser = new LoginUser();
+        com.test.dbhappy.jwt.LoginUser loginUser = new com.test.dbhappy.jwt.LoginUser();
         loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
         loginUser.setToken((String) hashMap.get("token"));
         return R.ok(loginUser);

@@ -1,6 +1,6 @@
 package com.test.dbhappy.security;
 
-import com.test.dbhappy.entity.User;
+import com.test.dbhappy.entity.LoginUser;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,7 +10,7 @@ import java.util.Collection;
 
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class SecurityUserDetails extends User implements UserDetails {
+public class SecurityLoginUserDetails extends LoginUser implements UserDetails {
 
 
     private String username;
@@ -35,10 +35,10 @@ public class SecurityUserDetails extends User implements UserDetails {
     }
 
 
-    public SecurityUserDetails(User user, Collection<? extends GrantedAuthority> authorities){
+    public SecurityLoginUserDetails(LoginUser loginUser, Collection<? extends GrantedAuthority> authorities){
         this.authorities = authorities;
-        this.password = user.getPassword();
-        this.username = user.getUsername();
+        this.password = loginUser.getPassword();
+        this.username = loginUser.getUsername();
     }
 
     /**

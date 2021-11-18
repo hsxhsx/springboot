@@ -1,8 +1,8 @@
 package com.test.dbhappy.security;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.test.dbhappy.entity.User;
-import com.test.dbhappy.service.UserService;
+import com.test.dbhappy.entity.LoginUser;
+import com.test.dbhappy.service.LoginUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -21,26 +21,26 @@ import java.util.List;
 public class SecurityUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserService userService;
+    private LoginUserService loginUserService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        QueryWrapper<LoginUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username", username);
-        User user = userService.getOne(queryWrapper);
-        System.out.println("JwtUserDetailsService:" + user);
+        LoginUser loginUser = loginUserService.getOne(queryWrapper);
+        System.out.println("JwtUserDetailsService:" + loginUser);
         List<GrantedAuthority> authorityList = new ArrayList<>();
-        if (ObjectUtils.isEmpty(user)) return null;
+        if (ObjectUtils.isEmpty(loginUser)) return null;
         //此处做业务逻辑处理，角色权限查询
-        if (!StringUtils.isEmpty(user.getRole())) {
-            List<String> roleList = Arrays.asList(user.getRole().split(","));
+        if (!StringUtils.isEmpty(loginUser.getRole())) {
+            List<String> roleList = Arrays.asList(loginUser.getRole().split(","));
             roleList.stream().forEach(role -> {
                         authorityList.add(new SimpleGrantedAuthority(role));
                     }
             );
         }
         //构建security 角色权限对象
-        return new SecurityUserDetails(user, authorityList);
+        return new SecurityLoginUserDetails(loginUser, authorityList);
     }
 
 }

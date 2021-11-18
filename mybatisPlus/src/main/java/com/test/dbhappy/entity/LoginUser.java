@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @TableName("t_user")
-public class User {
+public class LoginUser {
     private String id;
     private String username;
     private String password;
