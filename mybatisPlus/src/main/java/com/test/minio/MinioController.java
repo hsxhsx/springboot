@@ -50,4 +50,12 @@ public class MinioController {
     public void download(HttpServletRequest request, HttpServletResponse response, String fileName) {
         minioUtil.downloadFile(bucketName,fileName,fileName,response);
     }
+
+    @RequestMapping("/deleted")
+    public R deleted(String fileName) {
+        return R.ok(minioUtil.removeObject(bucketName,fileName));
+    }
+    //todo:批量上传下载
+
+
 }
