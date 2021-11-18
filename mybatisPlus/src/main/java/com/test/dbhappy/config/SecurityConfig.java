@@ -33,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     JwtAuthorizationTokenFilter authenticationTokenFilter;
 
 
-    //先来这里认证一下
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(securityUserDetailsService).passwordEncoder(passwordEncoderBean());
