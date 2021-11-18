@@ -7,7 +7,6 @@ import com.test.dbhappy.security.SecurityUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -49,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/auth/login").permitAll()
                 .antMatchers("/doc.html").permitAll()
-                .antMatchers(HttpMethod.OPTIONS, "/**").anonymous()
+                .anyRequest().authenticated()
                 .and()
                 .csrf().disable()                      // 禁用 Spring Security 自带的跨域处理
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
