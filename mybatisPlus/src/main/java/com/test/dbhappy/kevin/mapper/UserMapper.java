@@ -1,5 +1,5 @@
 package com.test.dbhappy.kevin.mapper;
-
+import com.test.dbhappy.mybatisplusbatchsql.RootMapper;
 import com.test.dbhappy.kevin.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author 胡双喜
- * @since 2021-11-16
+ * @since 2021-11-18
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends RootMapper<User> {
 
 }

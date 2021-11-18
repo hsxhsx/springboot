@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.github.pagehelper.PageHelper;
+import com.test.dbhappy.mybatisplusbatchsql.CustomizedSqlInjector;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +19,7 @@ import java.util.Properties;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.test.dbhappy.kevin.mapper")
+@MapperScan(basePackages = {"com.test.dbhappy.kevin.mapper","com.test.dbhappy.mapper"})
 public class MybatisPlusConfig {
 
     /**
@@ -44,4 +45,10 @@ public class MybatisPlusConfig {
         pageHelper.setProperties(properties);
         return pageHelper;
     }
+
+    @Bean
+    public CustomizedSqlInjector customizedSqlInjector() {
+        return new CustomizedSqlInjector();
+    }
+
 }

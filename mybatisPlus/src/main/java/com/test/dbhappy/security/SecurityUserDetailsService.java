@@ -1,8 +1,8 @@
 package com.test.dbhappy.security;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.test.dbhappy.kevin.entity.User;
-import com.test.dbhappy.kevin.service.UserService;
+import com.test.dbhappy.entity.User;
+import com.test.dbhappy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

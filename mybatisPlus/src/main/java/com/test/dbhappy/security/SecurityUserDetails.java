@@ -1,6 +1,6 @@
 package com.test.dbhappy.security;
 
-import com.test.dbhappy.kevin.entity.User;
+import com.test.dbhappy.entity.User;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import org.springframework.security.core.GrantedAuthority;

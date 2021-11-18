@@ -85,7 +85,7 @@ public class CodeGenerator {
         strategy.setTableFillList(tableFills);
         //乐观锁配置
         strategy.setVersionFieldName("version");
-        strategy.setSuperControllerClass("com.test.gen.BaseController");
+        strategy.setSuperControllerClass("com.test.dbhappy.gen.BaseController");
         strategy.setEntitySerialVersionUID(true);
         mpg.setStrategy(strategy);
 

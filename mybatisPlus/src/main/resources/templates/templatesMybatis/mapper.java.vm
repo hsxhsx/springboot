@@ -1,5 +1,5 @@
 package ${package.Mapper};
-
+import com.test.dbhappy.mybatisplusbatchsql.RootMapper;
 import ${package.Entity}.${entity};
 import ${superMapperClassPackage};
 
@@ -12,9 +12,9 @@ import ${superMapperClassPackage};
  * @since ${date}
  */
 #if(${kotlin})
-interface ${table.mapperName} : ${superMapperClass}<${entity}>
+interface ${table.mapperName} : RootMapper<${entity}>
 #else
-public interface ${table.mapperName} extends ${superMapperClass}<${entity}> {
+public interface ${table.mapperName} extends RootMapper<${entity}> {
 
 }
 #end

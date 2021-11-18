@@ -1,5 +1,7 @@
 package ${package.Service};
 
+import java.util.List;
+
 import ${package.Entity}.${entity};
 import ${superServiceClassPackage};
 
@@ -15,6 +17,8 @@ import ${superServiceClassPackage};
 interface ${table.serviceName} : ${superServiceClass}<${entity}>
 #else
 public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+        int batchInsert(List<${entity}> list);
 
+        int batchUpdate(List<${entity}> list);
 }
 #end

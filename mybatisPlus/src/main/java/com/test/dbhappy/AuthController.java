@@ -1,10 +1,10 @@
 package com.test.dbhappy;
 
 import com.test.dbhappy.gen.R;
-import com.test.dbhappy.jwt.LoginUser;
 import com.test.dbhappy.jwt.JwtTokenUtil;
-import com.test.dbhappy.kevin.entity.User;
-import com.test.dbhappy.kevin.service.UserService;
+import com.test.dbhappy.jwt.LoginUser;
+import com.test.dbhappy.entity.User;
+import com.test.dbhappy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;

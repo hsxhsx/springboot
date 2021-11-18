@@ -1,7 +1,9 @@
 package com.test.dbhappy.kevin.service;
 
-import com.test.dbhappy.kevin.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.test.dbhappy.kevin.entity.User;
+
+import java.util.List;
 
 /**
  * <p>
@@ -9,8 +11,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author 胡双喜
- * @since 2021-11-16
+ * @since 2021-11-18
  */
 public interface UserService extends IService<User> {
+        int batchInsert(List<User> list);
 
+        int batchUpdate(List<User> list);
 }

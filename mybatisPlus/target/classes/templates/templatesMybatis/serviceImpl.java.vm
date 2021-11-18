@@ -6,6 +6,9 @@ import ${package.Service}.${table.serviceName};
 import ${superServiceImplClassPackage};
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
+
 /**
  * <p>
  * $!{table.comment} 服务实现类
@@ -21,6 +24,17 @@ open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperNam
 }
 #else
 public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+        @Resource
+        private ${table.mapperName} mapper;
 
+        @Override
+        public int batchInsert(List<User> list) {
+        return mapper.insertBatch(list);
+        }
+
+        @Override
+        public int batchUpdate(List<User> list) {
+        return mapper.updateBatch(list);
+        }
 }
 #end
