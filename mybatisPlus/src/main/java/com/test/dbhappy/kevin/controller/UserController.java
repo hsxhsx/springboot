@@ -1,23 +1,21 @@
 package com.test.dbhappy.kevin.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.github.pagehelper.PageHelper;
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import com.test.dbhappy.gen.BaseController;
 import com.test.dbhappy.gen.PageDomain;
 import com.test.dbhappy.gen.R;
 import com.test.dbhappy.gen.TableDataInfo;
 import com.test.dbhappy.kevin.entity.User;
+import com.test.dbhappy.kevin.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import org.springframework.web.bind.annotation.*;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.github.pagehelper.PageHelper;
-
-import java.util.Objects;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
-
-import com.test.dbhappy.kevin.service.UserService;
+import java.util.Objects;
 
 /**
  * 前端控制器
@@ -43,7 +41,7 @@ public class UserController extends BaseController {
         return R.ok(getDataTable(service.list(qw)));
     }
 
-    @GetMapping({"/getOne"})
+    @GetMapping({"getOne"})
     @ApiOperationSupport(order = 2)
     @ApiOperation(value = "根据实体id获取详情")
     public R<User> getOne(User entity) {
@@ -73,7 +71,7 @@ public class UserController extends BaseController {
         }
     }
 
-    @DeleteMapping({"/remove/{id}"})
+    @DeleteMapping({"remove/{id}"})
     @ApiOperationSupport(order = 5)
     @ApiOperation(value = " 删除实体")
     public R remove(@PathVariable("id") int id) {

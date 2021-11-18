@@ -49,7 +49,7 @@ class $!{table.controllerName}#if(${superControllerClass}) : $!{superControllerC
         return R.ok(getDataTable(service.list(qw)));
     }
 
-    @GetMapping({"/getOne"})
+    @GetMapping({"getOne"})
     @ApiOperationSupport(order = 2)
     @ApiOperation(value = "根据实体id获取详情")
     public R<User> getOne($!{table.entityName} entity) {
@@ -83,7 +83,7 @@ if(Objects.isNull($getId)){
         }
     }
 
-    @DeleteMapping({"/remove/{id}"})
+    @DeleteMapping({"remove/{id}"})
     @ApiOperationSupport(order = 5)
     @ApiOperation(value = " 删除实体")
     public R remove(@PathVariable("id") int id) {

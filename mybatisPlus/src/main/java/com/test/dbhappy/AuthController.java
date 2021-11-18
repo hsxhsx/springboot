@@ -25,7 +25,7 @@ import java.util.Date;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("auth")
 public class AuthController {
 
     @Autowired
@@ -46,7 +46,7 @@ public class AuthController {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    @PostMapping("/login")
+    @PostMapping("login")
     public R<LoginUser> login(@RequestBody User user){
         final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
         if(userDetails!=null && passwordEncoder.matches(user.getPassword(),userDetails.getPassword())) {
@@ -69,7 +69,7 @@ public class AuthController {
      * @param admin 用户实体类
      */
     @Secured("ROLE_ADMIN")
-    @PostMapping("/addUser")
+    @PostMapping("addUser")
     public R add(@RequestBody User admin  ) {
         //获取用户的密码，并调用encode函数进行加密，加密后的密码在放入实体类中
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
@@ -83,7 +83,7 @@ public class AuthController {
         return R.ok("新增成功");
     }
 
-    @PostMapping("/refreshToke")
+    @PostMapping("refreshToke")
     public R<LoginUser> refreshToke(@RequestBody @Valid User user  ) {
         Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
         LoginUser loginUser = new LoginUser();

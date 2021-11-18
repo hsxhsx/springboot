@@ -20,7 +20,7 @@ import java.util.Date;
 
 
 @RestController
-@RequestMapping("/minio")
+@RequestMapping("minio")
 @Api(tags = "minio文件系统")
 public class MinioController {
 
@@ -36,7 +36,7 @@ public class MinioController {
     @Autowired
     private MinioUtil minioUtil;
 
-    @PostMapping("/upload")
+    @PostMapping("upload")
     @ApiOperationSupport(order = 1)
     @ApiOperation(value = "上传文件")
     public R upload(@RequestParam(name = "file", required = false) MultipartFile file) throws Exception {
@@ -50,14 +50,14 @@ public class MinioController {
         return R.ok(endpoint+":"+port+"/"+bucketName+"/"+ UriUtils.encode(date_file+prefix_file+file.getOriginalFilename(), StandardCharsets.UTF_8));
     }
 
-    @GetMapping("/download")
+    @GetMapping("download")
     @ApiOperationSupport(order = 2)
     @ApiOperation(value = "下载文件")
     public void download(HttpServletResponse response, String fileName) {
         minioUtil.downloadFile(bucketName,fileName,fileName,response);
     }
 
-    @GetMapping("/deleted")
+    @GetMapping("deleted")
     @ApiOperationSupport(order = 3)
     @ApiOperation(value = "删除文件")
     public R deleted(String fileName) {
