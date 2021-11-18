@@ -28,22 +28,26 @@ public class JwtTokenUtil implements Serializable {
 
     private Clock clock = DefaultClock.INSTANCE;
 
-    public String generateToken(String username) {
+    public Map<String,Object> generateToken(String username) {
         Map<String, Object> claims = new HashMap<>();
         return doGenerateToken(claims, username);
     }
 
-    private String doGenerateToken(Map<String, Object> claims, String subject) {
+    private Map<String,Object> doGenerateToken(Map<String, Object> claims, String subject) {
         final Date createdDate = clock.now();
         final Date expirationDate = calculateExpirationDate(createdDate);
 
-        return Jwts.builder()
+        String token = Jwts.builder()
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(createdDate)
                 .setExpiration(expirationDate)
                 .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
+        Map hashMap = new HashMap();
+        hashMap.put("token",token);
+        hashMap.put("expirationDate",expirationDate);
+        return hashMap;
     }
 
     private Date calculateExpirationDate(Date createdDate) {

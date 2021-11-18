@@ -77,7 +77,7 @@ minio:
 #jwt
 jwt:
   secret: NDU0NTY4amhmc3NkeHp6eGNxdzIlMjFAJTIxQCUyM2ZmNQ==             # 用于生成token的密钥
-  expiration: 7200000   # token有效期
+  expiration: 604800000   # token有效期
   token: Authorization   # http header里token 所在的字段名
 
 

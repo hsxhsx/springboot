@@ -2,6 +2,7 @@ package com.test;
 
 import com.test.gen.R;
 import com.test.jwt.JwtTokenUtil;
+import com.test.jwt.LoginUser;
 import com.test.kevin.entity.User;
 import com.test.kevin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+import java.util.Date;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
@@ -42,14 +47,18 @@ public class AuthController {
     private JwtTokenUtil jwtTokenUtil;
 
     @PostMapping("/login")
-    public R login(@RequestBody User user){
+    public R<LoginUser> login(@RequestBody User user){
         final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
         if(userDetails!=null && passwordEncoder.matches(user.getPassword(),userDetails.getPassword())) {
-            final String token = jwtTokenUtil.generateToken(user.getUsername());
+            Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
+            LoginUser loginUser = new LoginUser();
+            loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
+            loginUser.setToken((String) hashMap.get("token"));
+            loginUser.setUserDetails(userDetails);
             //添加 start
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            return R.ok(token);
+            return R.ok(loginUser);
         }
         return R.fail("账号或者密码错误");
     }
@@ -68,5 +77,14 @@ public class AuthController {
         userService.save(admin);
         //返回结果
         return R.ok("新增成功");
+    }
+
+    @PostMapping("/refreshToke")
+    public R<LoginUser> refreshToke(@RequestBody @Valid User user  ) {
+        Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
+        LoginUser loginUser = new LoginUser();
+        loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
+        loginUser.setToken((String) hashMap.get("token"));
+        return R.ok(loginUser);
     }
 }
