@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriUtils;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
@@ -35,7 +34,7 @@ public class MinioController {
 
     @ResponseBody
     @PostMapping("/upload")
-    public R upload(@RequestParam(name = "file", required = false) MultipartFile file, HttpServletRequest request) throws Exception {
+    public R upload(@RequestParam(name = "file", required = false) MultipartFile file) throws Exception {
         if (file == null || file.getSize() == 0) {
             throw new Exception("上传文件不能为空");
         }
@@ -47,7 +46,7 @@ public class MinioController {
     }
 
     @RequestMapping("/download")
-    public void download(HttpServletRequest request, HttpServletResponse response, String fileName) {
+    public void download(HttpServletResponse response, String fileName) {
         minioUtil.downloadFile(bucketName,fileName,fileName,response);
     }
 
@@ -55,7 +54,5 @@ public class MinioController {
     public R deleted(String fileName) {
         return R.ok(minioUtil.removeObject(bucketName,fileName));
     }
-    //todo:批量上传下载
-
 
 }
