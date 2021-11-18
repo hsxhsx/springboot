@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dbhappy.kevin.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.test.dbhappy.kevin.entity.User">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="department" property="department"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="create_time" property="createTime"/>
+        <result column="author" property="author"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="sample_manufacturer" property="sampleManufacturer"/>
+        <result column="deleted" property="deleted"/>
+        <result column="role" property="role"/>
+        <result column="account" property="account"/>
+        <result column="page_number" property="pageNumber"/>
+        <result column="page_size" property="pageSize"/>
+        <result column="district_code" property="districtCode"/>
+        <result column="street_sign" property="streetSign"/>
+        <result column="community_sign" property="communitySign"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, user_name, password, department, phone_number, create_time, author, update_time, sample_manufacturer, deleted, role, account, page_number, page_size, district_code, street_sign, community_sign
+    </sql>
+
+</mapper>
