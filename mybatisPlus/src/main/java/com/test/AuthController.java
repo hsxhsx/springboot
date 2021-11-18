@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     @Autowired
-    @Qualifier("jwtUserDetailsService")
+    @Qualifier("securityUserDetailsService")
     private UserDetailsService userDetailsService;
 
     @Bean

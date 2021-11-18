@@ -1,9 +1,8 @@
-package com.test.jwt;
+package com.test.security;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.test.kevin.entity.User;
 import com.test.kevin.service.UserService;
-import com.test.security.SecurityUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class JwtUserDetailsService implements UserDetailsService {
+public class SecurityUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserService userService;
@@ -40,6 +39,7 @@ public class JwtUserDetailsService implements UserDetailsService {
                     }
             );
         }
+        //构建security 角色权限对象
         return new SecurityUserDetails(user, authorityList);
     }
 

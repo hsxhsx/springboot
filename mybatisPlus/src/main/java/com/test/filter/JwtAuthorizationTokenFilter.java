@@ -25,7 +25,7 @@ public class JwtAuthorizationTokenFilter extends OncePerRequestFilter {
     private final JwtTokenUtil jwtTokenUtil;
     private final String tokenHeader;
 
-    public JwtAuthorizationTokenFilter(@Qualifier("jwtUserDetailsService") UserDetailsService userDetailsService,
+    public JwtAuthorizationTokenFilter(@Qualifier("securityUserDetailsService") UserDetailsService userDetailsService,
                                        JwtTokenUtil jwtTokenUtil, @Value("${jwt.token}") String tokenHeader) {
         this.userDetailsService = userDetailsService;
         this.jwtTokenUtil = jwtTokenUtil;

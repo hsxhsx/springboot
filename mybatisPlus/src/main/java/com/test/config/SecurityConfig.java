@@ -3,7 +3,7 @@ package com.test.config;
 
 import com.test.exception.JwtAuthenticationEntryPoint;
 import com.test.filter.JwtAuthorizationTokenFilter;
-import com.test.jwt.JwtUserDetailsService;
+import com.test.security.SecurityUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Autowired
-    JwtUserDetailsService jwtUserDetailsService;
+    SecurityUserDetailsService securityUserDetailsService;
 
     @Autowired
     JwtAuthorizationTokenFilter authenticationTokenFilter;
@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //先来这里认证一下
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoderBean());
+        auth.userDetailsService(securityUserDetailsService).passwordEncoder(passwordEncoderBean());
     }
 
     //拦截在这配
