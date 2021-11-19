@@ -11,11 +11,11 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 用户表 服务实现类
  * </p>
  *
  * @author 胡双喜
- * @since 2021-11-18
+ * @since 2021-11-19
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {

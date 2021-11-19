@@ -21,14 +21,14 @@ import java.util.Objects;
 
 /**
  *
- *   前端控制器
+ *  用户表 前端控制器
  *
  * @author: 胡双喜
- * @date: 2021-11-18
+ * @date: 2021-11-19
  */
 @RestController
 @RequestMapping({"user"})
-@Api(tags = "管理")
+@Api(tags = "用户表管理")
     public class UserController extends BaseController {
 
     @Resource
