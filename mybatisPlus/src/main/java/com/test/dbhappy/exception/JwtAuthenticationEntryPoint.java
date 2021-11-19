@@ -25,8 +25,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
         PrintWriter out = response.getWriter();
         TokenResponse401 tokenResponse401 = new TokenResponse401();
-        tokenResponse401.setDate(new Date()).setStatus(HttpStatus.UNAUTHORIZED.value()).setError("Unauthorized")
-                .setMessage("token非法").setPath(request.getServletPath());
+        tokenResponse401.setStatus(HttpStatus.UNAUTHORIZED.value()).setError("Unauthorized")
+                .setMessage("token非法").setPath(request.getServletPath())
+                 .setTimestamp(new Date());
         out.append(JSONUtil.toJsonStr(tokenResponse401));
     }
 }
