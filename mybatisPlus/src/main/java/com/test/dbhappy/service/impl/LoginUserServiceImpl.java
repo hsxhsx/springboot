@@ -1,5 +1,6 @@
 package com.test.dbhappy.service.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.test.dbhappy.entity.LoginUser;
 import com.test.dbhappy.mapper.LoginUserMapper;
@@ -16,6 +17,7 @@ public class LoginUserServiceImpl extends ServiceImpl<LoginUserMapper, LoginUser
    private LoginUserMapper mapper;
 
     @Override
+    @DS(value = "slave")
     public int batchInsert(List<LoginUser> list) {
         return mapper.insertBatch(list);
     }
