@@ -19,7 +19,7 @@
     <select id="selectHoliday" parameterType="com.test.dbhappy.entity.HolidayDTO"
             resultType="java.lang.Integer">
         select sum(status) as status from s_holiday
-        <where> 1 = 1
+        <where>
             <if test="startTime != null ">
                 and holiday <![CDATA[ >= ]]> str_to_date(#{startTime}, '%Y-%m-%d %H:%i:%s')
             </if>
