@@ -19,10 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="修改401自定义返回">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/TaskPoolConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/service/AsyncTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/service/impl/AsyncTaskImpl.java" afterDir="false" />
+    <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="新增线程池工具类">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/service/AsyncTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/service/AsyncTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/service/impl/AsyncTaskImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/service/impl/AsyncTaskImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,13 +103,13 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.mybatisPlus.jar">
-    <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.test.dbhappy.gen.CodeGenerator" />
+  <component name="RunManager" selected="Spring Boot.MyApplication (1)">
+    <configuration name="AsyncTaskImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.dbhappy.service.impl.AsyncTaskImpl" />
       <module name="mybatisPlus" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.test.dbhappy.gen.*" />
+          <option name="PATTERN" value="com.test.dbhappy.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.test.gen.CodeGenerator" />
+    <configuration name="CodeGenerator (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.test.dbhappy.gen.CodeGenerator" />
       <module name="mybatisPlus" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.test.gen.*" />
+          <option name="PATTERN" value="com.test.dbhappy.gen.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -186,19 +188,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CodeGenerator" />
       <item itemvalue="Application.CodeGenerator (1)" />
       <item itemvalue="Spring Boot.MyApplication" />
       <item itemvalue="Spring Boot.MyApplication (1)" />
       <item itemvalue="JAR Application.mybatisPlus.jar" />
+      <item itemvalue="Application.AsyncTaskImpl" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MyApplication (1)" />
+        <item itemvalue="Application.AsyncTaskImpl" />
         <item itemvalue="JAR Application.mybatisPlus.jar" />
         <item itemvalue="Application.CodeGenerator (1)" />
         <item itemvalue="Spring Boot.MyApplication" />
-        <item itemvalue="Application.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +238,7 @@
       <workItem from="1637288765643" duration="1792000" />
       <workItem from="1637309946392" duration="2516000" />
       <workItem from="1637314363271" duration="852000" />
-      <workItem from="1637315338136" duration="2683000" />
+      <workItem from="1637315338136" duration="4868000" />
     </task>
     <task id="LOCAL-00001" summary="version1.0">
       <created>1637049063451</created>
@@ -441,7 +443,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637316134361</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="新增线程池工具类">
+      <created>1637548761060</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1637548761060</updated>
+    </task>
+    <task id="LOCAL-00031" summary="新增线程池工具类">
+      <created>1637548842571</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1637548842571</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +496,8 @@
     <MESSAGE value="修改filter，增加异常" />
     <MESSAGE value="生成注释" />
     <MESSAGE value="修改401自定义返回" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改401自定义返回" />
+    <MESSAGE value="新增线程池工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增线程池工具类" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" width="1164" height="689" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637223340052">
@@ -519,54 +536,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1637314455545" />
-    <state width="1024" height="203" key="GridCell.Tab.0.bottom" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.0.bottom" timestamp="1637550762337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.0.center" timestamp="1637316083976">
+    <state width="1024" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637550762337" />
+    <state width="1024" height="201" key="GridCell.Tab.0.center" timestamp="1637550762337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637316083976" />
-    <state width="1024" height="203" key="GridCell.Tab.0.left" timestamp="1637316083976">
+    <state width="1024" height="201" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1637550762337" />
+    <state width="1024" height="201" key="GridCell.Tab.0.left" timestamp="1637550762336">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637316083976" />
-    <state width="1024" height="203" key="GridCell.Tab.0.right" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1637550762336" />
+    <state width="1024" height="201" key="GridCell.Tab.0.right" timestamp="1637550762337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.1.bottom" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1637550762337" />
+    <state width="1024" height="201" key="GridCell.Tab.1.bottom" timestamp="1637550762338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.1.center" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637550762338" />
+    <state width="1024" height="201" key="GridCell.Tab.1.center" timestamp="1637550762337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.1.left" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1637550762337" />
+    <state width="1024" height="201" key="GridCell.Tab.1.left" timestamp="1637550762337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.1.right" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1637550762337" />
+    <state width="1024" height="201" key="GridCell.Tab.1.right" timestamp="1637550762337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.2.bottom" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1637550762337" />
+    <state width="1024" height="201" key="GridCell.Tab.2.bottom" timestamp="1637550762338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.2.center" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1637550762338" />
+    <state width="1024" height="201" key="GridCell.Tab.2.center" timestamp="1637550762338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.2.left" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1637550762338" />
+    <state width="1024" height="201" key="GridCell.Tab.2.left" timestamp="1637550762338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
-    <state width="1024" height="203" key="GridCell.Tab.2.right" timestamp="1637316083977">
+    <state width="1024" height="201" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1637550762338" />
+    <state width="1024" height="201" key="GridCell.Tab.2.right" timestamp="1637550762338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="203" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1637316083977" />
+    <state width="1024" height="201" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1637550762338" />
     <state x="455" y="115" key="Maven.ArtifactSearchDialog" timestamp="1637221416778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -579,18 +596,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1637223303796" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1637316143191">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1637548850646">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1637316143191" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1637548850646" />
     <state width="775" height="412" key="XDebugger.FullValuePopup" timestamp="1637137075651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="775" height="412" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1637137075651" />
-    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637548738024">
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1637548833339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1637548738024" />
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1637548833339" />
     <state x="550" y="108" width="600" height="560" key="find.popup" timestamp="1637228408496">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

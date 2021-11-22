@@ -1,8 +1,9 @@
 package com.test.dbhappy;
 
+import com.test.dbhappy.entity.LoginUser;
 import com.test.dbhappy.gen.R;
 import com.test.dbhappy.jwt.JwtTokenUtil;
-import com.test.dbhappy.entity.LoginUser;
+import com.test.dbhappy.service.AsyncTask;
 import com.test.dbhappy.service.LoginUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -14,14 +15,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Date;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 @RestController
 @RequestMapping("auth")
@@ -44,6 +44,9 @@ public class AuthController {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+
+    @Autowired
+    private AsyncTask asyncTask;
 
     @PostMapping("login")
     public R<com.test.dbhappy.jwt.LoginUser> login(@RequestBody LoginUser user){
@@ -89,5 +92,15 @@ public class AuthController {
         loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
         loginUser.setToken((String) hashMap.get("token"));
         return R.ok(loginUser);
+    }
+
+    @GetMapping("/test")
+    public void getTask() throws InterruptedException, ExecutionException {
+        for(int i = 0; i<100;i++) {
+            asyncTask.tesTask(i);
+            Future<String> futureTask = asyncTask.stringTask(i+"测试");
+            String string = futureTask.get();//阻碍线程顺序输出（同步线程）
+            System.out.println(string);
+        }
     }
 }
