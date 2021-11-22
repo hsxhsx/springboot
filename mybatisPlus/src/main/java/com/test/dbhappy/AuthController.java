@@ -5,6 +5,7 @@ import com.test.dbhappy.gen.R;
 import com.test.dbhappy.jwt.JwtTokenUtil;
 import com.test.dbhappy.service.AsyncTask;
 import com.test.dbhappy.service.LoginUserService;
+import com.test.dbhappy.utils.EasyExcelUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -17,8 +18,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -94,7 +99,7 @@ public class AuthController {
         return R.ok(loginUser);
     }
 
-    @GetMapping("/test")
+    @GetMapping("test")
     public void getTask() throws InterruptedException, ExecutionException {
         for(int i = 0; i<100;i++) {
             asyncTask.tesTask(i);
@@ -102,5 +107,29 @@ public class AuthController {
             String string = futureTask.get();//阻碍线程顺序输出（同步线程）
             System.out.println(string);
         }
+    }
+
+    @GetMapping("export")
+    public void export(HttpServletResponse response) throws IOException {
+
+        //模拟从数据库获取需要导出的数据
+        List<LoginUser> personList = new ArrayList<>();
+        for(int i = 0; i<10;i++) {
+            LoginUser person1 = new LoginUser().setUsername("测试"+i).setCreateTime(new Date()).setPhoneNumber("1500712650"+i);
+
+            personList.add(person1);
+        }
+        //导出操作
+        EasyExcelUtil.exportExcel(personList,"花名册","草帽一伙",LoginUser.class,"海贼王.xls",response);
+    }
+
+    @PostMapping("importExcel")
+    public void importExcel() throws Exception {
+        String filePath = "F:\\海贼王.xls";
+        //解析excel，
+        List<LoginUser> personList = EasyExcelUtil.importExcel(filePath,1,1,LoginUser.class);
+        //也可以使用MultipartFile,使用 FileUtil.importExcel(MultipartFile file, Integer titleRows, Integer headerRows, Class<T> pojoClass)导入
+        System.out.println("导入数据一共【"+personList.size()+"】行");
+        //TODO 保存数据库
     }
 }
