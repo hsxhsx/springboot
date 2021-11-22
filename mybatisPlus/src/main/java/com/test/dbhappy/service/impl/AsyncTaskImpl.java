@@ -19,7 +19,7 @@ public class AsyncTaskImpl implements AsyncTask {
 
     @Async("taskExecutor")
     @Override
-    synchronized public Future<String> stringTask(String str) throws InterruptedException {
+    public Future<String> stringTask(String str) throws InterruptedException {
         System.out.println(Thread.currentThread().getName()+str);
         Thread.sleep(50);
         return new AsyncResult<String>(String.valueOf(str));
