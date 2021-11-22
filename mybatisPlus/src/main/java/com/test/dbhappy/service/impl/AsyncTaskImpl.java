@@ -2,9 +2,9 @@ package com.test.dbhappy.service.impl;
 
 import com.test.dbhappy.service.AsyncTask;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class AsyncTaskImpl implements AsyncTask {
 
     @Async("taskExecutor")
