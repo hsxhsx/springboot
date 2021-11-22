@@ -123,13 +123,13 @@ public class AuthController {
         EasyExcelUtil.exportExcel(personList,"花名册","草帽一伙",LoginUser.class,"海贼王.xls",response);
     }
 
-    @PostMapping("importExcel")
+    @GetMapping("importExcel")
     public void importExcel() throws Exception {
-        String filePath = "F:\\海贼王.xls";
+        String filePath = "C:\\Users\\001\\Downloads\\海贼王.xls";
         //解析excel，
         List<LoginUser> personList = EasyExcelUtil.importExcel(filePath,1,1,LoginUser.class);
         //也可以使用MultipartFile,使用 FileUtil.importExcel(MultipartFile file, Integer titleRows, Integer headerRows, Class<T> pojoClass)导入
         System.out.println("导入数据一共【"+personList.size()+"】行");
-        //TODO 保存数据库
+        loginUserService.batchInsert(personList);
     }
 }
