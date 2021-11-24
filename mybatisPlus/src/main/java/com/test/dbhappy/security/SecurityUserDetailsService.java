@@ -1,5 +1,6 @@
 package com.test.dbhappy.security;
 
+import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.test.dbhappy.entity.LoginUser;
 import com.test.dbhappy.service.LoginUserService;
@@ -25,6 +26,7 @@ public class SecurityUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        DynamicDataSourceContextHolder.push("master");
         QueryWrapper<LoginUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("username", username);
         LoginUser loginUser = loginUserService.getOne(queryWrapper);

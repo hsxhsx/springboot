@@ -2,27 +2,31 @@ server:
   port: 9001
 spring:
   datasource:
-    master:
-      #    url: jdbc:mysql://mysql-a73097c0ce3d45ce-proxy.zone-01.cn-wuhan.cecloudcs.com:3331/chou_yang?useUnicode=true&characterEncoding=utf8
-      #    url: jdbc:mysql://10.194.51.10:3306/chou_yang?useUnicode=true&characterEncoding=utf8
-      #    url: jdbc:mysql://172.16.10.195:3306/chou_yang?useUnicode=true&characterEncoding=utf8
-  #    url: jdbc:mysql://localhost:3306/chou_yang?useUnicode=true&characterEncoding=utf8
-      url: jdbc:mysql://localhost:3306/chou_yang?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true
-      driverClassName: com.mysql.cj.jdbc.Driver
-      #    username: chou_yang
-      #    password: Whdsj@JhhsDb88
-      username: root
-      #    password: Jhhs@Mysql195
-      #    password: Bigdata_123
-      password: hsx122096
-      type: com.alibaba.druid.pool.DruidDataSource
-    slave:
-        url: jdbc:mysql://172.16.10.195:3306/chou_yang?useUnicode=true&characterEncoding=utf8
-        idle-timeout: 20000
-        driver-class-name: com.mysql.jdbc.Driver
-        username: chou_yang
-        password: Whdsj@JhhsDb88
+   dynamic:
+    primary: master
+    strict: false
+    datasource:
+      master:
+        #    url: jdbc:mysql://mysql-a73097c0ce3d45ce-proxy.zone-01.cn-wuhan.cecloudcs.com:3331/chou_yang?useUnicode=true&characterEncoding=utf8
+        #    url: jdbc:mysql://10.194.51.10:3306/chou_yang?useUnicode=true&characterEncoding=utf8
+        #    url: jdbc:mysql://172.16.10.195:3306/chou_yang?useUnicode=true&characterEncoding=utf8
+    #    url: jdbc:mysql://localhost:3306/chou_yang?useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://localhost:3306/chou_yang?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&allowMultiQueries=true
+        driverClassName: com.mysql.cj.jdbc.Driver
+        #    username: chou_yang
+        #    password: Whdsj@JhhsDb88
+        username: root
+        #    password: Jhhs@Mysql195
+        #    password: Bigdata_123
+        password: hsx122096
         type: com.alibaba.druid.pool.DruidDataSource
+      slave:
+          url: jdbc:mysql://172.16.10.195:3306/chou_yang?useUnicode=true&characterEncoding=utf8
+          idle-timeout: 20000
+          driver-class-name: com.mysql.jdbc.Driver
+          username: chou_yang
+          password: Whdsj@JhhsDb88
+          type: com.alibaba.druid.pool.DruidDataSource
 
   redis:
     host: 172.16.10.185

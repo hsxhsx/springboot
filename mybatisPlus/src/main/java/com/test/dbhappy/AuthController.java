@@ -1,11 +1,13 @@
 package com.test.dbhappy;
 
+import cn.hutool.json.JSONUtil;
 import com.test.dbhappy.entity.LoginUser;
 import com.test.dbhappy.gen.R;
 import com.test.dbhappy.jwt.JwtTokenUtil;
 import com.test.dbhappy.service.AsyncTask;
 import com.test.dbhappy.service.LoginUserService;
 import com.test.dbhappy.utils.EasyExcelUtil;
+import com.test.dbhappy.utils.OkHttpClientUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -21,10 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -37,7 +36,7 @@ public class AuthController {
     private UserDetailsService userDetailsService;
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -54,9 +53,9 @@ public class AuthController {
     private AsyncTask asyncTask;
 
     @PostMapping("login")
-    public R<com.test.dbhappy.jwt.LoginUser> login(@RequestBody LoginUser user){
+    public R<com.test.dbhappy.jwt.LoginUser> login(@RequestBody LoginUser user) {
         final UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
-        if(userDetails!=null && passwordEncoder.matches(user.getPassword(),userDetails.getPassword())) {
+        if (userDetails != null && passwordEncoder.matches(user.getPassword(), userDetails.getPassword())) {
             Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
             com.test.dbhappy.jwt.LoginUser loginUser = new com.test.dbhappy.jwt.LoginUser();
             loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
@@ -73,25 +72,26 @@ public class AuthController {
 
     /**
      * 增加
+     *
      * @param admin 用户实体类
      */
     @Secured("ROLE_ADMIN")
     @PostMapping("addUser")
-    public R add(@RequestBody LoginUser admin  ) {
+    public R add(@RequestBody LoginUser admin) {
         //获取用户的密码，并调用encode函数进行加密，加密后的密码在放入实体类中
         admin.setPassword(passwordEncoder.encode(admin.getPassword()));
         //调用service层的的添加方法添加用户
         try {
             loginUserService.save(admin);
         } catch (Exception exception) {
-           return R.fail("已存在相同用户");
+            return R.fail("已存在相同用户");
         }
         //返回结果
         return R.ok("新增成功");
     }
 
     @PostMapping("refreshToke")
-    public R<com.test.dbhappy.jwt.LoginUser> refreshToke(@RequestBody @Valid LoginUser user  ) {
+    public R<com.test.dbhappy.jwt.LoginUser> refreshToke(@RequestBody @Valid LoginUser user) {
         Map hashMap = jwtTokenUtil.generateToken(user.getUsername());
         com.test.dbhappy.jwt.LoginUser loginUser = new com.test.dbhappy.jwt.LoginUser();
         loginUser.setExpirationDate((Date) hashMap.get("expirationDate"));
@@ -101,9 +101,9 @@ public class AuthController {
 
     @GetMapping("test")
     public void getTask() throws InterruptedException, ExecutionException {
-        for(int i = 0; i<100;i++) {
+        for (int i = 0; i < 100; i++) {
             asyncTask.tesTask(i);
-            Future<String> futureTask = asyncTask.stringTask(i+"测试");
+            Future<String> futureTask = asyncTask.stringTask(i + "测试");
             String string = futureTask.get();//阻碍线程顺序输出（同步线程）
             System.out.println(string);
         }
@@ -114,22 +114,36 @@ public class AuthController {
 
         //模拟从数据库获取需要导出的数据
         List<LoginUser> personList = new ArrayList<>();
-        for(int i = 0; i<10;i++) {
-            LoginUser person1 = new LoginUser().setUsername("测试"+i).setCreateTime(new Date()).setPhoneNumber("1500712650"+i);
+        for (int i = 0; i < 10; i++) {
+            LoginUser person1 = new LoginUser().setUsername("测试" + i).setCreateTime(new Date()).setPhoneNumber("1500712650" + i);
 
             personList.add(person1);
         }
         //导出操作
-        EasyExcelUtil.exportExcel(personList,"花名册","草帽一伙",LoginUser.class,"海贼王.xls",response);
+        EasyExcelUtil.exportExcel(personList, "花名册", "草帽一伙", LoginUser.class, "海贼王.xls", response);
     }
 
     @GetMapping("importExcel")
     public void importExcel() throws Exception {
         String filePath = "C:\\Users\\001\\Downloads\\海贼王.xls";
         //解析excel，
-        List<LoginUser> personList = EasyExcelUtil.importExcel(filePath,1,1,LoginUser.class);
+        List<LoginUser> personList = EasyExcelUtil.importExcel(filePath, 1, 1, LoginUser.class);
         //也可以使用MultipartFile,使用 FileUtil.importExcel(MultipartFile file, Integer titleRows, Integer headerRows, Class<T> pojoClass)导入
-        System.out.println("导入数据一共【"+personList.size()+"】行");
+        System.out.println("导入数据一共【" + personList.size() + "】行");
         loginUserService.batchInsert(personList);
     }
+
+    public static void main(String[] args) throws IOException {
+        String url = "http://localhost:9001/auth/addUser";
+        Map<String, String> headerMap = new HashMap<>();
+        headerMap.put("Authorization", "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhMiIsImlhdCI6MTYzNzczMjY2MCwiZXhwIjoxNjM4MzM3NDYwfQ.go2polyXcUmF1M3GOuuNeDqOG0b-egXctPkGp8WYBW8");
+        LoginUser user = new LoginUser();
+        user.setUsername("test--");
+        user.setPassword("123456");
+        user.setPhoneNumber("1500777777");
+        String param = JSONUtil.toJsonStr(user);
+        String result = OkHttpClientUtils.doPost(url, headerMap, param);
+        String result1 = OkHttpClientUtils.doGet("http://www.baidu.com");
+    }
+
 }
