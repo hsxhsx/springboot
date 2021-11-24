@@ -2,7 +2,7 @@
 
 ### 单体服务说明
 
-- [Git地址](https://gitee.com/doublehappy_admin/springbootProject/tree/master/mybatisPlus)
+- [Gitee地址](https://gitee.com/doublehappy_admin/springbootProject/tree/master/mybatisPlus)
 - security权限+jwt
 - redis 缓存
 - minio 文件存储
