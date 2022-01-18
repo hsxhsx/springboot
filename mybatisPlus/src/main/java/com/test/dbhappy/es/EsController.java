@@ -1,11 +1,14 @@
 package com.test.dbhappy.es;
 
+import com.google.common.collect.Lists;
 import com.test.dbhappy.kevin.entity.User;
 import com.test.dbhappy.service.ElasticRepository;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -22,9 +25,9 @@ public class EsController {
     }
 
     @GetMapping("list")
-    public Iterable<User> getList(User user) {
+    public List<User> getList(User user) {
         QueryBuilder queryBuilder = QueryBuilders.matchQuery("username", "hsx");
-        return elasticRepository.search(queryBuilder);
+        return Lists.newLinkedList(elasticRepository.search(queryBuilder));
     }
 
 }
