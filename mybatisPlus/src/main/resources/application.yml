@@ -1,6 +1,16 @@
 server:
   port: 9001
 spring:
+  # es相关配置
+  data:
+    elasticsearch:
+      # 配置集群名
+      cluster-name: my-application   # 访问 es服务端 `http://127.0.0.1:9200/` 填写 `cluster_name` 对应的值
+      # 配置节点信息，逗号分隔，如果没有指定，则启动ClientNode 【 注：9200->图形界面端、9300->程序端 】
+      cluster-nodes: 127.0.0.1:9300
+      # 开启 Elasticsearch 仓库(默认值:true)
+      repositories:
+        enabled: true
   datasource:
    dynamic:
     primary: master
@@ -92,6 +102,10 @@ jwt:
   secret: NDU0NTY4amhmc3NkeHp6eGNxdzIlMjFAJTIxQCUyM2ZmNQ==             # 用于生成token的密钥
   expiration: 604800000   # token有效期
   token: Authorization   # http header里token 所在的字段名
+
+
+
+
 
 
 
