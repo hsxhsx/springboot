@@ -24,7 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="新增el">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/es/EsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/es/EsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/MybatisPlusConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,9 +215,9 @@
     <list>
       <item itemvalue="Application.AsyncTaskImpl" />
       <item itemvalue="Application.AuthController" />
-      <item itemvalue="JAR Application.mybatisPlus.jar" />
       <item itemvalue="Application.Application" />
       <item itemvalue="Application.EsController" />
+      <item itemvalue="JAR Application.mybatisPlus.jar" />
     </list>
     <recent_temporary>
       <list>
@@ -599,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642493270667</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="新增el">
+      <created>1642496477887</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1642496477887</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
