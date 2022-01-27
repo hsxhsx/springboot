@@ -15,4 +15,5 @@
 - 多数据源@DS注解
 - okhttp工具类，post，get，表单提交，文件上传下载
 - es：save,select 
+- 乐观锁
 

@@ -22,9 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="新增el">
+    <list default="true" id="996d17dd-bf37-4cff-847f-617844672874" name="Default Changelist" comment="新增version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/test/dbhappy/config/MybatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -606,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642496477887</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="新增version">
+      <created>1643170819534</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1643170819534</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +633,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="新增token 刷新，引入redis的原因.单点登录" />
     <MESSAGE value="minio文件删除接口" />
     <MESSAGE value="调整结构" />
     <MESSAGE value="优化代码" />
@@ -650,7 +657,8 @@
     <MESSAGE value="okhttp 工具类" />
     <MESSAGE value="动态数据源bug修复，新增okhttp请求示例代码" />
     <MESSAGE value="新增el" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增el" />
+    <MESSAGE value="新增version" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增version" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/mybatisPlus$MyApplication.ic" NAME="MyApplication Coverage Results" MODIFIED="1636681536302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
